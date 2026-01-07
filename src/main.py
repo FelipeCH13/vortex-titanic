@@ -33,7 +33,7 @@ with open(file_path,'r', encoding = "utf-8") as file:
         linea = file.readline().strip()
         ## Dividir la línea en una lista de valores utilizando la coma como separador
         valores = linea.split(',')
-        if valores[1] == '1':
+        if valores[survived_index] == '1':
             sobrevientes += 1
 
     print(f'En las primeras {iterador + 1} filas, hubo {sobrevientes} sobrevientes.')
