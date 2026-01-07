@@ -45,7 +45,9 @@ Las mujeres de **3ª clase** presentaron la tasa más baja de su género (**50%*
    git clone https://github.com/FelipeCH13/vortex-titanic
 
 2. Instala las dependencias
+    ```bash
+    pip install pandas matplotlib seaborn numpy
 
-pip install pandas matplotlib seaborn numpy
-
-3. Ejecuta el Script python titanic_analysis.py
+3. Ejecuta el Script 
+    ```bash
+    python titanic_analysis.py
