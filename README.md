@@ -42,4 +42,10 @@ Las mujeres de **3ª clase** presentaron la tasa más baja de su género (**50%*
 ## 🚀 Cómo ejecutar el proyecto
 1. Clona este repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/titanic-analysis.git](https://github.com/tu-usuario/titanic-analysis.git)
+   git clone https://github.com/FelipeCH13/vortex-titanic
+
+2. Instala las dependencias
+
+pip install pandas matplotlib seaborn numpy
+
+3. Ejecuta el Script python titanic_analysis.py

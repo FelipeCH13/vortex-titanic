@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
 
 ## ------------------------------------------1. Carga de datos y limpieza-----------------------------------------
 file_path = 'data/train.csv'
@@ -45,21 +46,24 @@ print("Análisis de supervivencia por género, edad y clase:")
 print(gen_class_age_survived)
 
 
-## -----------------------------------------Problema 3: Visualización de datos----------------------------------------------------
+## -----------------------------------------4: Visualización de datos----------------------------------------------------
+if not os.path.exists('images'):
+    os.makedirs('images')
+
 sns.barplot(x='Sex', y='Survived', data=df)
 plt.show() # Esta línea es la que efectivamente "abre" la ventana con el gráfico
+plt.savefig('images/supervivencia_genero.png') # Guardamos
 
 ## Ejemplo avanzado: Supervivencia por género y clase
 # Configuramos el estilo visual
 sns.set_theme(style="whitegrid")
-
 # Creamos el gráfico usando 'hue' para separar por Clase
 sns.barplot(x='Sex', y='Survived', hue='Pclass', data=df)
-
 # Personalizamos los títulos
 plt.title('Supervivencia: Género vs Clase')
 plt.ylabel('Tasa de Supervivencia')
 plt.show()
+plt.savefig('images/supervivencia_genero_clase.png') # Guardamos
 
 # Ejemplo adicional: Gráfico de cajas para edades por clase y supervivencia
 plt.figure(figsize=(10, 6))
@@ -67,6 +71,7 @@ plt.figure(figsize=(10, 6))
 sns.histplot(data=df, x='Age', kde=True, color='teal')
 plt.title('Distribución de Edades en el Titanic')
 plt.show()
+plt.savefig('images/distribucion_edades.png') # Guardamos
 
 # Gráfico de cajas, mostrando la distribución de edades por clase y supervivencia
 sns.catplot(
@@ -83,4 +88,5 @@ sns.catplot(
 
 plt.subplots_adjust(top=0.85)
 plt.suptitle('Supervivencia: El impacto de la Clase y Edad por Género')
+plt.savefig('images/analisis_final_interseccional.png') # Guardamos usando el objeto g
 plt.show()
